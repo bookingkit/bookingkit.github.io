@@ -1,0 +1,12 @@
+summary: User Reseller access | list roles
+description: returns a list of available roles for vendor access
+security:
+  - OAuth2:
+      - user_read
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UserResellerRolesListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

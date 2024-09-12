@@ -1,0 +1,4 @@
+type: string
+description: ISO 4217 currency code
+example: "EUR"
+x-faker: finance.currencyCode

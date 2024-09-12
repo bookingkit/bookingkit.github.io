@@ -1,0 +1,12 @@
+summary: Experiences | create
+description: creates a new product
+security:
+  - OAuth2:
+      - inventory_write
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+responses:
+  '201':
+    $ref: '../../responses/inventory/ExperienceResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

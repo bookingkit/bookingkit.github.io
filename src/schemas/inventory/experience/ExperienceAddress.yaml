@@ -1,0 +1,18 @@
+type: object
+properties:
+  city:
+    type: string
+    description: "example"
+    example: "example"
+  country:
+    type: string
+    description: "example"
+    example: "example"
+  display_address:
+    type: string
+    description: "example"
+    example: "example"
+  directions:
+    type: string
+    description: "new property, extra info on where to meet within the address"
+    example: "example"

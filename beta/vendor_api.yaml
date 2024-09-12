@@ -1,0 +1,134 @@
+openapi: 3.0.0
+
+info:
+  description: beta VENDOR API, only for internal use
+  version: "0.0.1"
+  title: '[BETA] bookingkit VENDOR API V4'
+  contact:
+    name: API Support
+    email: service@bookingkit.net
+servers:
+  - url: https://beta.api-v4.bookingkit.de
+    description: production server
+  - url: https://sandbox.beta.vendors.api-v4.bookingkit.de
+    description: development sandbox
+security:
+  - OAuth2: [ admin ]
+
+paths:
+  /vendors/:
+    get:
+      $ref: '../src/endpoints/vendor/VendorList.yaml'
+    post:
+      $ref: '../src/endpoints/vendor/VendorCreate.yaml'
+
+  /vendors/match-account/:
+    get:
+      $ref: '../src/endpoints/vendor/VendorListByAccount.yaml'
+
+  /vendors/{vendorId}/:
+    get:
+      $ref: '../src/endpoints/vendor/VendorRead.yaml'
+    post:
+      $ref: '../src/endpoints/vendor/VendorWrite.yaml'
+
+  /vendors/{vendorId}/details/:
+    get:
+      $ref: '../src/endpoints/vendor/VendorDetailsRead.yaml'
+    post:
+      $ref: '../src/endpoints/vendor/VendorDetailsWrite.yaml'
+
+  /vendors/{vendorId}/legal-documents/:
+    get:
+      $ref: '../src/endpoints/vendor/VendorLegalDocumentsRead.yaml'
+    put:
+      $ref: '../src/endpoints/vendor/VendorLegalDocumentsWrite.yaml'
+
+  /vendors/{vendorId}/notification/:
+    $ref: '../src/endpoints/vendor/VendorNotification.yaml'
+
+  /vendors/{vendorId}/payment-providers/:
+    $ref: '../src/endpoints/vendor/paymentProvider/PaymentProvidersList.yaml'
+
+  /vendors/{vendorId}/payment-providers/{prodiverId}:
+    post:
+      $ref: '../src/endpoints/vendor/paymentProvider/ActivationIntent.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets:
+    $ref: '../src/endpoints/vendor/paymentProvider/WalletsList.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets/{walletId}/payout:
+    $ref: '../src/endpoints/vendor/paymentProvider/WalletPayOut.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets/{walletId}/payout/v2:
+    $ref: '../src/endpoints/vendor/paymentProvider/WalletPayOutV2.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets/{walletId}/payout-destinations:
+    post:
+      $ref: '../src/endpoints/vendor/paymentProvider/PayoutDestinationCreate.yaml'
+    get:
+      $ref: '../src/endpoints/vendor/paymentProvider/PayoutDestinationsList.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets/{walletId}/stripe-web-payin:
+    $ref: '../src/endpoints/vendor/paymentProvider/StripeWebPayIn.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets/{walletId}/transactions:
+    $ref: '../src/endpoints/vendor/paymentProvider/WalletTransactionsList.yaml'
+
+  /vendors/{vendorId}/payment-providers/wallets/transactions/exports:
+    get:
+      $ref: '../src/endpoints/vendor/paymentProvider/TransactionsExportsList.yaml'
+    post:
+      $ref: '../src/endpoints/vendor/paymentProvider/TransactionsExportsCreate.yaml'
+
+
+
+components:
+  schemas:
+    GenericError:
+      $ref: '../src/schemas/errors/GenericError.yaml'
+    MetaData:
+      $ref: '../src/schemas/MetaData.yaml'
+    StatusResponse:
+      $ref: '../src/schemas/StatusResponse.yaml'
+    Money:
+      $ref: '../src/schemas/dataObjects/Money.yaml'
+    Uri:
+      $ref: '../src/schemas/dataObjects/Uri.yaml'
+    DateTime:
+      $ref: '../src/schemas/dataObjects/DateTime.yaml'
+    Vendor:
+      $ref: '../src/schemas/vendor/Vendor.yaml'
+    VendorId:
+      $ref: '../src/schemas/vendor/fields/VendorId.yaml'
+    VendorDetails:
+      $ref: '../src/schemas/vendor/VendorDetails.yaml'
+    VendorProperties:
+      $ref: '../src/schemas/vendor/VendorProperties.yaml'
+    VendorLegalDocuments:
+      $ref: '../src/schemas/vendor/VendorLegalDocuments.yaml'
+    TextDoument:
+      $ref: '../src/schemas/vendor/fields/TextDocument.yaml'
+    PaymentProvider:
+      $ref: '../src/schemas/vendor/paymentProvider/PaymentProvider.yaml'
+    StripeWebPayIn:
+      $ref: '../src/schemas/vendor/paymentProvider/StripeWebPayIn.yaml'
+    Wallet:
+      $ref: '../src/schemas/vendor/paymentProvider/Wallet.yaml'
+    WalletId:
+      $ref: '../src/schemas/vendor/paymentProvider/fields/WalletId.yaml'
+    WalletBalance:
+      $ref: '../src/schemas/vendor/paymentProvider/WalletBalance.yaml'
+    WalletTransaction:
+      $ref: '../src/schemas/vendor/paymentProvider/WalletTransaction.yaml'
+    PaymentProviderId:
+      $ref: '../src/schemas/vendor/paymentProvider/fields/PaymentProviderId.yaml'
+    PaymentProviderStatus:
+      $ref: '../src/schemas/vendor/paymentProvider/fields/PaymentProviderStatus.yaml'
+    WalletTransactionId:
+      $ref: '../src/schemas/vendor/paymentProvider/fields/WalletTransactionId.yaml'
+    WalletTransactionType:
+      $ref: '../src/schemas/vendor/paymentProvider/fields/WalletTransactionType.yaml'
+  securitySchemes:
+    OAuth2:
+      $ref: '../src/security/Oauth2SecuritySchema.yaml'

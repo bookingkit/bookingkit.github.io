@@ -1,0 +1,5 @@
+description: The resource you requested cannot be found
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/errors/GenericError.yaml'

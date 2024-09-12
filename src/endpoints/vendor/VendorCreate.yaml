@@ -1,0 +1,20 @@
+summary: vendors | create
+description: creates a new vendor object
+operationId: VendorCreate
+security:
+  - OAuth2:
+      - vendor_write
+  - OAuth2:
+      - global_vendor_write
+requestBody:
+  required: true
+  description: create a new vendor
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/vendor/VendorProperties.yaml'
+responses:
+  '201':
+    $ref: '../../responses/vendor/VendorResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

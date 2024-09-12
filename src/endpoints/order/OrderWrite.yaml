@@ -1,0 +1,24 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/OrderIdParam.yaml'
+summary: Orders | update
+description: update an existing order object, partial updates are prefered, only send properties that change
+security:
+  - OAuth2:
+      - order_write_owned
+  - OAuth2:
+      - order_write
+requestBody:
+  required: true
+  description: only add properties that you want to change
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/order/Order.yaml'
+responses:
+  '200':
+    $ref: '../../responses/order/OrderResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

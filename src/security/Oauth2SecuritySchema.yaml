@@ -1,0 +1,37 @@
+type: oauth2
+description: |
+  ## Attention
+  receiving a token with a particular scope does not necessarly ensure that the scope is also valid for all vendors
+  you have access to for example you could have
+  * token with inventory_write scope
+  * write access to vendor ABC
+  * no write access to vendor XYZ
+flows:
+  clientCredentials:
+    tokenUrl: https://api-v4.bookingkit.de/token
+    scopes:
+      vendor_read: grants read on vendors
+      vendor_write: grants write on vendors you have access to
+      global_vendor_read: grants read access to all vendors
+      global_vendor_write: grants read access to all vendors
+      vendor_notify: grants notification permission for vendors
+
+      availability_read: grants read on availability
+      availability_write: grants write on availability
+      global_availability_read: grants read on all availability
+      inventory_read: grants read on inventory
+      inventory_write: grants write on inventory
+      global_inventory_read: grants read on all inventory
+
+      manage_payments: grants ability to manipulate payments
+      manage_wallets: grants ability to manipulate payment provider wallets
+
+      order_read_owned: grants read on orders created by this client
+      order_write_owned: grants write on orders created by this client
+      order_read: grants read on all orders of the vendors this client may access
+      order_write: grants write on all orders of the vendors this client may access
+      global_order_read: grants read on all orders
+      user_read: grants read access to users
+      user_write: grants read/write access to users
+      global_user_read: grants read access to all users
+      global_user_write: grants read/write access to all users

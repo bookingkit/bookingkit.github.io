@@ -1,0 +1,4 @@
+type: string
+description: 'Format: YYYY-MM-DD'
+format: date
+example: "2021-09-07"

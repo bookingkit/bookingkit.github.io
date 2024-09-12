@@ -1,0 +1,16 @@
+type: object
+title: List response metadata
+required:
+  - page_size
+properties:
+  next_page_token:
+    type: string
+    maxLength: 64
+    example: 9548af6f5807aee13dd1a7f09706d08a
+    x-faker:
+      random.alphaNumeric: 64
+  page_size:
+    type: integer
+    example: 10
+
+

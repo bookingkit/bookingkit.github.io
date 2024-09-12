@@ -1,0 +1,12 @@
+type: object
+description: a payin operation
+required:
+  - client_secret
+  - publishable_key
+properties:
+  client_secret:
+    type: string
+    example: 'asdfg134256475869708'
+  publishable_key:
+    type: string
+    example: 'asdfg134256475869708'

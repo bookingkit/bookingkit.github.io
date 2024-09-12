@@ -1,0 +1,9 @@
+type: array
+items:
+  type: object
+  properties:
+    locale:
+      $ref: 'Locale.yaml'
+    value:
+      type: string
+      x-faker: lorem.sentence

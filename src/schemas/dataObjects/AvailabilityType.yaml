@@ -1,0 +1,2 @@
+type: string
+enum: [ "OPENING_HOURS", "TIME_SLOT" ]

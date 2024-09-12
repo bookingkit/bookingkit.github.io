@@ -1,0 +1,15 @@
+allOf:
+  - type: object
+    required:
+      - id
+      - status
+      - kyc_status
+    properties:
+      id:
+        $ref: 'fields/PaymentProviderId.yaml'
+      status:
+        $ref: 'fields/PaymentProviderStatus.yaml'
+      kyc_status:
+        $ref: 'fields/PaymentProviderKycStatus.yaml'
+      activation_intent:
+        $ref: 'ActivationIntent.yaml'

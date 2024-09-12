@@ -1,0 +1,26 @@
+title: 'TICKET'
+type: object
+required:
+  - order_item_type
+  - service_id
+  - option_id
+  - availability_id
+  - price_option_id
+properties:
+  order_item_type:
+    type: string
+    enum: [ "TICKET" ]
+  price:
+    $ref: '../../dataObjects/Money.yaml'
+  entry_code:
+    $ref: '../ticket/fields/TicketCode.yaml'
+  service_id:
+    $ref: '../../inventory/service/fields/ServiceId.yaml'
+  option_id:
+    $ref: '../../inventory/fields/OptionId.yaml'
+  availability_id:
+    $ref: '../../inventory/fields/AvailabilityId.yaml'
+  price_option_id:
+    $ref: '../../inventory/fields/PriceOptionId.yaml'
+  contact:
+    $ref: '../fields/OrderItemContact.yaml'

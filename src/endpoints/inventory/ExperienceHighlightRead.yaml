@@ -1,0 +1,11 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/ExperienceIdParam.yaml'
+summary: Highlight | get
+description: returns a highlight
+security:
+  - OAuth2:
+      - inventory_read
+responses:
+  '200':
+    $ref: '../../responses/inventory/ExperienceHighlightResponse.yaml'

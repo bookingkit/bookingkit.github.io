@@ -1,0 +1,14 @@
+summary: payment provider | activation request
+description: activation request for payment provider
+operationId: PaymentProviderActivationIntent
+security:
+  - OAuth2:
+      - manage_payments
+parameters:
+  - $ref: '../../../parameters/VendorIdParam.yaml'
+  - $ref: '../../../parameters/PaymentProviderIdParam.yaml'
+responses:
+  '200':
+    $ref: '../../../responses/vendor/paymentProvider/PaymentProviderResponse.yaml'
+  '401':
+    $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

@@ -1,0 +1,9 @@
+name: 'localStartTime'
+in: query
+description: |
+  The earliest local time acceptable, the provided time is included (>=)
+  this filter is specifically for the local time of the service
+required: false
+schema:
+  type: string
+  format: date-time

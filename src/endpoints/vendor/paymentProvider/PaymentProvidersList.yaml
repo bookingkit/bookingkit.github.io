@@ -1,0 +1,14 @@
+get:
+  summary: payment providers | list
+  description: list payment providers
+  operationId: PaymentProvidersList
+  security:
+    - OAuth2:
+        - vendor_read
+  parameters:
+    - $ref: '../../../parameters/VendorIdParam.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/vendor/paymentProvider/PaymentProvidersListResponse.yaml'
+    '401':
+      $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

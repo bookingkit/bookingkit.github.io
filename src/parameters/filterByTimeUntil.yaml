@@ -1,0 +1,8 @@
+name: 'until'
+in: query
+description: |
+  The latest time acceptable, the provided time is NOT included (<)
+required: false
+schema:
+  type: string
+  format: date-time

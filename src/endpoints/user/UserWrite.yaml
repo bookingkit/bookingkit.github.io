@@ -1,0 +1,23 @@
+parameters:
+  - $ref: '../../parameters/UserIdParam.yaml'
+summary: Users | update
+description: update an existing user object, partial updates are prefered, only send properties that change
+security:
+  - OAuth2:
+      - user_write
+  - OAuth2:
+      - global_user_write
+requestBody:
+  required: true
+  description: only add properties that you whant to change
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/user/User.yaml'
+responses:
+  '200':
+    $ref: '../../responses/user/UserResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

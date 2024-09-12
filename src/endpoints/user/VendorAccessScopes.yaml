@@ -1,0 +1,12 @@
+summary: User Vendor access | list scopes
+description: returns a list of available scopes for vendor access
+security:
+  - OAuth2:
+      - user_read
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UserVendorScopesListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

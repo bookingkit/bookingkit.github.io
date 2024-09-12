@@ -1,0 +1,14 @@
+get:
+  summary: wallets | list wallets
+  description: list payment providers
+  operationId: WalletsList
+  security:
+    - OAuth2:
+        - manage_wallets
+  parameters:
+    - $ref: '../../../parameters/VendorIdParam.yaml'
+  responses:
+    '200':
+      $ref: '../../../responses/vendor/paymentProvider/WalletsListResponse.yaml'
+    '401':
+      $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

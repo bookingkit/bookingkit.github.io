@@ -1,0 +1,5 @@
+description: An experience object
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/inventory/experience/Experience.yaml'

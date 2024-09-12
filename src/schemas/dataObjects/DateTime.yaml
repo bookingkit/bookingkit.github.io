@@ -1,0 +1,4 @@
+type: string
+description: 'Format: YYYY-MM-DDThh:mm:ss.sZ, always in UTC'
+format: date-time
+example: "2021-09-07T10:40:52.082300Z"

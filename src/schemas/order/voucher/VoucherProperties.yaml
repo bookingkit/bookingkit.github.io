@@ -1,0 +1,22 @@
+allOf:
+  - type: object
+    properties:
+      creation_date:
+        $ref: '../../dataObjects/DateTime.yaml'
+      redeemable_value:
+        $ref: '../../dataObjects/Money.yaml'
+      expiration_date:
+        $ref: '../../dataObjects/DateTime.yaml'
+      contact:
+        $ref: '../fields/OrderContact.yaml'
+      status:
+        type: string
+        enum: [ 'OPEN', 'REDEEMED', 'CANCELED' ]
+      redeem_methods:
+        type: array
+        description: instructions on how the voucher can be used
+        items:
+          type: string
+          enum: [ 'ONLINE', 'ONLOCATION' ]
+
+  - $ref: 'VoucherOrderItemProperties.yaml'

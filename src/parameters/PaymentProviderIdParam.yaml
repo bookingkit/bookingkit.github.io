@@ -1,0 +1,6 @@
+name: 'paymentProvider'
+in: path
+description: A valid payment provider ID
+required: true
+schema:
+  $ref: '../schemas/vendor/paymentProvider/fields/PaymentProviderId.yaml'

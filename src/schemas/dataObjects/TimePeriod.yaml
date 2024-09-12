@@ -1,0 +1,7 @@
+type: object
+description: a time period
+properties:
+  start:
+    $ref: 'DateTime.yaml'
+  end:
+    $ref: 'DateTime.yaml'

@@ -1,0 +1,4 @@
+type: string
+title: transaction type
+example: 'AVAILABLE'
+enum: [ 'PENDING','PROCESSING', 'AVAILABLE' ]

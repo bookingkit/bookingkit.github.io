@@ -1,0 +1,6 @@
+name: 'voucherId'
+in: path
+description: A valid voucher ID
+required: true
+schema:
+  $ref: '../schemas/order/voucher/fields/VoucherId.yaml'

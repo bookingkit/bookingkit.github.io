@@ -1,0 +1,24 @@
+parameters:
+  - $ref: '../../parameters/UserIdParam.yaml'
+  - $ref: '../../parameters/resellerId.yaml'
+summary: User Reseller access | update
+description: udates the access for this user for a reseller
+security:
+  - OAuth2:
+      - user_write
+  - OAuth2:
+      - global_user_write
+requestBody:
+  required: true
+  description: you need to send the complete resource representation
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/user/UserResellerAccess.yaml'
+responses:
+  '200':
+    $ref: '../../responses/user/UserResellerResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

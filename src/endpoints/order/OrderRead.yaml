@@ -1,0 +1,19 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/OrderIdParam.yaml'
+summary: Orders | get
+description: returns an order object
+security:
+  - OAuth2:
+      - order_read_owned
+  - OAuth2:
+      - order_read
+responses:
+  '200':
+    $ref: '../../responses/order/OrderResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthenticatedResponse.yaml'
+  '403':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

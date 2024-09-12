@@ -1,0 +1,42 @@
+openapi: 3.0.0
+
+info:
+  description: beta Search API, only for internal use
+  version: "0.0.1"
+  title: '[BETA] bookingkit SEARCH API V4'
+  contact:
+    name: API Support
+    email: service@bookingkit.net
+servers:
+  - url: https://beta.api-v4.bookingkit.de
+    description: production server
+  - url: https://sandbox.beta.vendors.api-v4.bookingkit.de
+    description: development sandbox
+security:
+  - OAuth2: [admin]
+
+paths:
+  /search/{vendorId}/orders/:
+    post:
+      $ref: '../src/endpoints/search/OrderSearch.yaml'
+
+  /search/{vendorId}/vouchers/:
+    post:
+      $ref: '../src/endpoints/search/VoucherSearch.yaml'
+
+  /search/{vendorId}/service-vouchers/:
+    post:
+      $ref: '../src/endpoints/search/ServiceVoucherSearch.yaml'
+
+  /search/{vendorId}/coupons/:
+    post:
+      $ref: '../src/endpoints/search/CouponSearch.yaml'
+
+  /search/{vendorId}/features/:
+    post:
+      $ref: '../src/endpoints/search/FeatureSearch.yaml'
+
+components:
+  securitySchemes:
+    OAuth2:
+      $ref: '../src/security/Oauth2SecuritySchema.yaml'

@@ -1,0 +1,10 @@
+summary: Voucher offer | delete
+description: delete a voucher offer
+security:
+  - OAuth2:
+      - inventory_write, manage_payments
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/VoucherOfferIdParam.yaml'
+responses:
+  $ref: '../../responseTypes/DelayedDeletionEndpointResponses.yaml'

@@ -1,0 +1,17 @@
+type: object
+title: User Reseller Access
+required:
+  - id
+properties:
+  id:
+    type: string
+    x-faker: datatype.uuid
+  role:
+    type: string
+    maxLength: 30
+    example: ''
+    x-faker: lorem.word
+  branches:
+    type: array
+    items:
+      $ref: "UserResellerBranchAccess.yaml"

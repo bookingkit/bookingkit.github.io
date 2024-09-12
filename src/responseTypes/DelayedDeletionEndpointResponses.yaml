@@ -1,0 +1,6 @@
+'202':
+  $ref: '../responses/ResourceDeletedResponse.yaml'
+'401':
+  $ref: '../responses/errors/UnauthorizedResponse.yaml'
+'404':
+  $ref: '../responses/errors/NotFoundResponse.yaml'

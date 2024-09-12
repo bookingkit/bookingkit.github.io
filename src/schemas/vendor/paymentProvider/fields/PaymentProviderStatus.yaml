@@ -1,0 +1,5 @@
+type: string
+title: payment provider id
+example: 'ACTIVE'
+enum: [ 'ACTIVE','INACTIVE', 'SCHEDULED' ]
+maxLength: 16

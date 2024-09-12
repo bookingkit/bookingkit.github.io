@@ -1,0 +1,28 @@
+type: object
+description: payment provider wallet
+required:
+  - callback_uri
+  - callback_jwt_token
+  - from_date
+  - to_date
+  - format
+  - locale
+properties:
+  from_date:
+    description: earliest DateTime INCLUDED in the export (>=)
+    $ref: '../../dataObjects/DateTime.yaml'
+  to_date:
+    description: earliest DateTime EXCLUDED in the export (<)
+    $ref: '../../dataObjects/DateTime.yaml'
+  format:
+    description: file format
+    $ref: '../../vendor/paymentProvider/fields/TransactionsExportFileType.yaml'
+  locale:
+    description: locale for the export
+    $ref: '../../dataObjects/Locale.yaml'
+  callback_url:
+    $ref: '../../dataObjects/Uri.yaml'
+  callback_token:
+    $ref: '../../dataObjects/Token.yaml'
+
+

@@ -1,0 +1,12 @@
+type: object
+title: StatusResponse
+required:
+  - status
+properties:
+  status:
+    type: string
+    enum: ["success", "error"]
+    example: "success"
+  message:
+    type: string
+    description: "Localizable slug, for example: invalid_date"

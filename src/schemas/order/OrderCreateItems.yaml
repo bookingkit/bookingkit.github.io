@@ -1,0 +1,7 @@
+type: array
+items:
+  anyOf:
+    - $ref: 'orderCreateItems/TicketOrderItem.yaml'
+    - $ref: 'orderCreateItems/VoucherOrderItem.yaml'
+    - $ref: 'orderCreateItems/ServiceVoucherOrderItem.yaml'
+    - $ref: 'orderCreateItems/OrderItem.yaml'

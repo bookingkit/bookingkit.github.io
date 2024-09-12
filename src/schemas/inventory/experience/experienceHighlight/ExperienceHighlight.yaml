@@ -1,0 +1,11 @@
+allOf:
+  - type: object
+    required:
+      - id
+      - uri
+    properties:
+      id:
+        $ref: 'fields/ExperienceHighlightId.yaml'
+      uri:
+        $ref: '../../../dataObjects/Uri.yaml'
+  - $ref: 'ExperienceHighlightProperties.yaml'

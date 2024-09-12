@@ -1,0 +1,16 @@
+summary: orders
+description: returns a list of order seach results
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/QueryParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+security:
+  - OAuth2:
+      - order_read_owned
+  - OAuth2:
+      - order_read
+responses:
+  '200':
+    $ref: '../../responses/order/OrdersListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

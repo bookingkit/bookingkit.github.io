@@ -1,0 +1,15 @@
+summary: Vouchers | list
+description: returns alist of vouchers
+security:
+  - OAuth2:
+      - manage_payments
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/order/VouchersListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

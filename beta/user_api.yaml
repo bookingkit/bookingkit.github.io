@@ -1,0 +1,67 @@
+openapi: 3.0.0
+
+info:
+  description: beta User API, only for internal use
+  version: "0.0.1"
+  title: '[BETA] bookingkit USER API V4'
+  contact:
+    name: API Support
+    email: service@bookingkit.net
+servers:
+  - url: https://beta.api-v4.bookingkit.de
+    description: production server
+  - url: https://sandbox.beta.vendors.api-v4.bookingkit.de
+    description: development sandbox
+security:
+  - OAuth2: [admin]
+
+paths:
+  /users/me:
+    get:
+      $ref: '../src/endpoints/user/MeRead.yaml'
+    post:
+      $ref: '../src/endpoints/user/MeWrite.yaml'
+  /users:
+    get:
+      $ref: '../src/endpoints/user/UserList.yaml'
+    post:
+      $ref: '../src/endpoints/user/UserCreate.yaml'
+  /users/{userId}:
+    get:
+      $ref: '../src/endpoints/user/UserRead.yaml'
+    post:
+      $ref: '../src/endpoints/user/UserWrite.yaml'
+  /users/vendor/{vendorId}:
+    get:
+      $ref: '../src/endpoints/user/UserListByVendor.yaml'
+  /users/vendorAccess/scopes:
+    get:
+      $ref: '../src/endpoints/user/VendorAccessScopes.yaml'
+  /users/{userId}/vendorAccess:
+    get:
+      $ref: '../src/endpoints/user/UserVendorAccessList.yaml'
+  /users/{userId}/vendorAccess/{vendorId}:
+    get:
+      $ref: '../src/endpoints/user/UserVendorAccessRead.yaml'
+    put:
+      $ref: '../src/endpoints/user/UserVendorAccessReplace.yaml'
+    delete:
+      $ref: '../src/endpoints/user/UserVendorAccessDelete.yaml'
+  /users/{userId}/resellerAccess:
+    get:
+      $ref: '../src/endpoints/user/UserResellerAccessList.yaml'
+  /users/{userId}/resellerAccess/{resellerId}:
+    get:
+      $ref: '../src/endpoints/user/UserResellerAccessRead.yaml'
+    put:
+      $ref: '../src/endpoints/user/UserResellerAccessReplace.yaml'
+    delete:
+      $ref: '../src/endpoints/user/UserResellerAccessDelete.yaml'
+  /users/resellerAccess/roles:
+    get:
+      $ref: '../src/endpoints/user/ResellerAccessRoles.yaml'
+
+components:
+  securitySchemes:
+    OAuth2:
+      $ref: '../src/security/Oauth2SecuritySchema.yaml'

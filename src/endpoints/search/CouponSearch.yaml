@@ -1,0 +1,14 @@
+summary: coupons
+description: returns a list of coupons seach results
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/QueryParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+security:
+  - OAuth2:
+      - inventory_write
+responses:
+  '200':
+    $ref: '../../responses/order/CouponsListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

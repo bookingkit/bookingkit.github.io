@@ -1,0 +1,5 @@
+description: A list of vendor you have access to
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/vendor/VendorLegalDocuments.yaml'

@@ -1,0 +1,14 @@
+summary: PriceCategories | create
+description: creates a new price category
+security:
+  - OAuth2:
+      - inventory_write
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/ExperienceIdParam.yaml'
+
+responses:
+  '201':
+    $ref: '../../responses/inventory/PriceCategoryResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

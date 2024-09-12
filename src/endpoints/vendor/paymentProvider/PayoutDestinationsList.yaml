@@ -1,0 +1,14 @@
+summary: payout destinations | list
+description: list payout destinations
+operationId: PayoutDestinationsList
+security:
+  - OAuth2:
+      - manage_wallets
+parameters:
+  - $ref: '../../../parameters/VendorIdParam.yaml'
+  - $ref: '../../../parameters/WalletIdParam.yaml'
+responses:
+  '200':
+    $ref: '../../../responses/vendor/paymentProvider/PayoutDestinationsListResponse.yaml'
+  '401':
+    $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

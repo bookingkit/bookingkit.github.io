@@ -1,0 +1,12 @@
+description: list of transactions exports
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        metadata:
+          $ref: '../../../schemas/MetaData.yaml'
+        data:
+          type: array
+          items:
+            $ref: '../../../schemas/vendor/paymentProvider/TransactionsExport.yaml'

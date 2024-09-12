@@ -1,0 +1,29 @@
+type: object
+title: Contact
+description: the contact of a person placing an order
+properties:
+  first_name:
+    type: string
+    minLength: 3
+    maxLength: 100
+    x-faker: name.firstName
+  last_name:
+    type: string
+    minLength: 3
+    maxLength: 100
+    x-faker: name.lastName
+  full_name:
+    type: string
+    minLength: 3
+    maxLength: 100
+    x-faker: name.findName
+  email:
+    type: string
+    format: email
+    maxLength: 254
+    x-faker: internet.email
+  phone:
+    type: string
+    x-faker: phone.phoneNumber
+  locale:
+    $ref: '../../dataObjects/Locale.yaml'

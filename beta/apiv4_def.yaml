@@ -1,0 +1,16 @@
+openapi: 3.0.0
+
+info:
+  description: "beta API V4, only for development use"
+  version: "0.0.1"
+  title: '[BETA] bookingkit API V4'
+  contact:
+    name: API Support
+    email: service@bookingkit.net
+servers:
+  - url: https://beta.api-v4.bookingkit.de
+    description: production server
+  - url: https://sandbox.beta.vendors.api-v4.bookingkit.de
+    description: development sandbox
+security:
+  - OAuth2: [ admin ]

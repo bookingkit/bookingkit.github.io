@@ -1,0 +1,70 @@
+type: object
+required:
+  - title
+properties:
+  title:
+    type: string
+    description: "example description"
+    maxLength: 255
+    example: "example"
+  requires_vendor_confirmation:
+    type: boolean
+    description: "example description"
+  availability_type:
+    $ref: "../../dataObjects/AvailabilityType.yaml"
+  description:
+    type: string
+    description: "example description"
+    maxLength: 999
+    example: "example"
+  additional_description_fields:
+    type: array
+    items:
+      type: object
+      properties:
+        key:
+          type: string
+          description: "example"
+          maxLength: 255
+          example: "example"
+        value:
+          type: string
+          description: "example"
+          example: "example"
+  category_id:
+    $ref: "fields/ExperienceCategoryId.yaml"
+  location:
+    $ref: "ExperienceLocation.yaml"
+  meeting_location:
+    $ref: "ExperienceLocation.yaml"
+  pre_time_minutes:
+    $ref: "../../dataObjects/Duration.yaml"
+  latest_booking_time_minutes:
+    $ref: "../../dataObjects/Duration.yaml"
+  rework_time_minutes:
+    $ref: "../../dataObjects/Duration.yaml"
+  maximum_allowed_participants_number:
+    type: integer
+    description: "Experience scope - how many people can participate at the same time in the experience"
+    example: 10
+  booking_restrictions:
+    type: object
+    properties:
+      minimum_participants:
+        type: integer
+        description: "Booking scope - how many participants required to make a booking, refers to the scope of the booking, required, module dependent"
+        example: 10
+        default: 1
+      strict_minimum_per_booking:
+        type: boolean
+        description: "Booking scope -Module dependent"
+  advertised_price:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - "STARTS_AT"
+          - "FIXED"
+      price:
+        $ref: "../../dataObjects/Money.yaml"

@@ -1,0 +1,5 @@
+type: string
+title: ticket code
+description: This code can be used to identify the ticket and also allow entry into automated systems
+example: ADB-DEF-GHIJ
+x-faker: internet.password

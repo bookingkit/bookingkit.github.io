@@ -1,0 +1,14 @@
+type: object
+properties:
+  terms:
+    type: array
+    items:
+      $ref: 'fields/TextDocument.yaml'
+  impress:
+    type: array
+    items:
+      $ref: 'fields/TextDocument.yaml'
+  privacy_statement:
+    type: array
+    items:
+      $ref: 'fields/TextDocument.yaml'

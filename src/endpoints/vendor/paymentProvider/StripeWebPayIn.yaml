@@ -1,0 +1,29 @@
+post:
+  summary: stipe web payin | create
+  description: create a payin
+  operationId: WalletStripePayInCreate
+  security:
+    - OAuth2:
+        - manage_wallets
+  parameters:
+    - $ref: '../../../parameters/VendorIdParam.yaml'
+    - name: 'walletId'
+      in: path
+      description: A valid wallet ID that matches the `id` returned from the wallet list.
+      required: true
+      schema:
+        $ref: '../../../schemas/vendor/paymentProvider/fields/WalletId.yaml'
+  requestBody:
+    required: true
+    description: create a stipe web payin
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/dataObjects/MoneyAmount.yaml'
+  responses:
+    '201':
+      $ref: '../../../responses/vendor/paymentProvider/StripeWebPayInResponse.yaml'
+    '401':
+      $ref: '../../../responses/errors/UnauthorizedResponse.yaml'
+    '404':
+      $ref: '../../../responses/errors/NotFoundResponse.yaml'

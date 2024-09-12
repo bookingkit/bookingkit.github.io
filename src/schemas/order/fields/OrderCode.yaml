@@ -1,0 +1,5 @@
+type: string
+description: human readable code communicated to the end customer
+example: 'BEH-APPY'
+minLength: 3
+maxLength: 20

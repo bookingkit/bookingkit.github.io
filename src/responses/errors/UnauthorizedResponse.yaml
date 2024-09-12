@@ -1,0 +1,5 @@
+description: You are not authorised to access this resource / make this request
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/errors/GenericError.yaml'

@@ -1,0 +1,15 @@
+type: object
+required:
+  - id
+  - name
+  - deeplink
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  deeplink:
+    type: string
+    format: uri
+  description:
+    type: string

@@ -1,0 +1,13 @@
+description: list of payout destinations
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        metadata:
+          $ref: '../../../schemas/MetaData.yaml'
+        data:
+          type: array
+          items:
+            oneOf:
+              - $ref: '../../../schemas/vendor/paymentProvider/BankAccount.yaml'

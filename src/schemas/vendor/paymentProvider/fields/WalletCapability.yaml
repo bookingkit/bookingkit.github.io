@@ -1,0 +1,5 @@
+type: string
+title: available wallet capability
+example: 'PAYOUT'
+enum: [ 'PAYOUT','PAYIN' ]
+maxLength: 16

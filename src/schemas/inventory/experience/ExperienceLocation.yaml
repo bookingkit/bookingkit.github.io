@@ -1,0 +1,16 @@
+type: object
+properties:
+  address:
+    $ref: "ExperienceAddress.yaml"
+  latitude:
+    type: number
+    description: "example"
+    example: "example"
+  longitude:
+    type: number
+    description: "example"
+    example: "example"
+  google_place_id:
+    type: string
+    description: "example"
+    example: "example"

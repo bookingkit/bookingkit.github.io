@@ -1,0 +1,5 @@
+type: string
+title: payment provider id
+example: 'VERIFIED'
+enum: [ 'VERIFIED','UNVERIFIED', 'PENDING',  'ACTION_REQUIRED', 'REJECTED' ]
+maxLength: 16

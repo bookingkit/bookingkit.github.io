@@ -1,0 +1,5 @@
+type: string
+title: transaction type
+example: 'PAYMENT'
+enum: [ 'FEE','PAYMENT','REFUND', 'PAY_OUT', 'PAY_IN' ]
+maxLength: 64

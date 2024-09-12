@@ -1,0 +1,24 @@
+type: object
+required:
+  - title
+  - type
+properties:
+  title:
+    type: string
+    description: "example description"
+    maxLength: 255
+    example: "example"
+  type:
+    type: string
+    enum:
+      - ADULT
+      - SENIOR
+      - YOUTH
+      - CHILD
+      - INFANT
+      - STUDENT
+      - OTHER
+    description: "example description"
+    maxLength: 255
+    example: "example"
+    default: 'OTHER'

@@ -1,0 +1,13 @@
+allOf:
+  - type: object
+    properties:
+      creation_date:
+        $ref: '../../dataObjects/DateTime.yaml'
+      status:
+        type: string
+        enum: [ 'VALID', 'REDEEMED', 'CANCELED', 'EXPIRED' , 'ONHOLD' ]
+      redemptions_remainaing:
+        type: integer
+      contact:
+        $ref: '../fields/OrderContact.yaml'
+  - $ref: 'ServiceVoucherOrderItemProperties.yaml'

@@ -1,0 +1,13 @@
+type: object
+title: UserVendorAccess
+required:
+  - id
+  - scopes
+properties:
+  id:
+    $ref: '../vendor/fields/VendorId.yaml'
+  scopes:
+    type: array
+    description: a list of scopes allowed for this vendor
+    items:
+      type: string

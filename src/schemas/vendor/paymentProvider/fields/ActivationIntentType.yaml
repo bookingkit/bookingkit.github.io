@@ -1,0 +1,5 @@
+type: string
+title: the type of activation
+example: 'ASAP'
+enum: [ 'ASAP','DATE_BASED' ]
+maxLength: 16

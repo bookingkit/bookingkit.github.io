@@ -1,0 +1,15 @@
+title: 'VOUCHER'
+type: object
+required:
+  - order_item_type
+  - initial_value
+properties:
+  order_item_type:
+    type: string
+    enum: [ "VOUCHER" ]
+  price:
+    $ref: '../../dataObjects/Money.yaml'
+  initial_value:
+    $ref: '../../dataObjects/Money.yaml'
+  redeem_code:
+    $ref: '../voucher/fields/VoucherRedeemCode.yaml'

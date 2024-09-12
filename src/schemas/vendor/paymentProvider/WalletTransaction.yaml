@@ -1,0 +1,60 @@
+type: object
+description: payment provider wallet
+required:
+  - id
+  - uri
+  - transaction_type
+  - amount
+  - flow
+  - creation_date
+  - execution_date
+properties:
+  id:
+    $ref: 'fields/WalletTransactionId.yaml'
+  uri:
+    $ref: '../../dataObjects/Uri.yaml'
+  transaction_type:
+    $ref: 'fields/WalletTransactionType.yaml'
+  amount:
+    $ref: '../../dataObjects/Money.yaml'
+  flow:
+    description: direction of the flow of funds
+    example: 'INCOMING'
+    enum: [ 'INCOMING','OUTGOING' ]
+  creation_date:
+    description: DateTime of the creation for this transaction
+    $ref: '../../dataObjects/DateTime.yaml'
+  execution_date:
+    description: DateTime of the execution for this transaction
+    $ref: '../../dataObjects/DateTime.yaml'
+  transaction_meta_data:
+    description: additional information on the context of the transaction
+    type: object
+    properties:
+      related_order:
+        description: an order that is related to the transaction
+        type: object
+        nullable: true
+        properties:
+          id:
+            $ref: '../../order/fields/OrderId.yaml'
+          code:
+            $ref: '../../order/fields/OrderCode.yaml'
+          uri:
+            $ref: '../../dataObjects/Uri.yaml'
+      user:
+        type: object
+        description: user that executed the transaction
+        nullable: true
+        properties:
+          full_name:
+            type: string
+            minLength: 3
+            maxLength: 100
+            x-faker: name.findName
+          id:
+            $ref: '../../user/fields/UserId.yaml'
+          uri:
+            $ref: '../../dataObjects/Uri.yaml'
+
+

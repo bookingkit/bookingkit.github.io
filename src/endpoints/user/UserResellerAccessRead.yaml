@@ -1,0 +1,18 @@
+parameters:
+  - $ref: '../../parameters/UserIdParam.yaml'
+  - $ref: '../../parameters/resellerId.yaml'
+summary: User Reseller access | get
+description: returns the access for this user for a reseller
+security:
+  - OAuth2:
+      - user_read
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UserResellerResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'
+

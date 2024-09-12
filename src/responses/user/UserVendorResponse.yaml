@@ -1,0 +1,5 @@
+description: Informaton about a user access to a vendor
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/user/UserVendorAccess.yaml'

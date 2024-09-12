@@ -1,0 +1,16 @@
+title: 'FLEXIBLE_TICKET'
+allOf:
+  - type: object
+    required:
+      - id
+      - uri
+      - price
+    properties:
+      order_item_type:
+        type: string
+        enum: [ "FLEXIBLE_TICKET" ]
+      id:
+        $ref: '../service_voucher/fields/ServiceVoucherId.yaml'
+      uri:
+        $ref: '../../dataObjects/Uri.yaml'
+  - $ref: '../service_voucher/ServiceVoucherOrderItemProperties.yaml'

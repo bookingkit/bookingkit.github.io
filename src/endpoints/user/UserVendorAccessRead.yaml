@@ -1,0 +1,17 @@
+parameters:
+  - $ref: '../../parameters/UserIdParam.yaml'
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: User Vendor access | get
+description: returns the access for this user for a vendor
+security:
+  - OAuth2:
+      - user_read
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UserVendorResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

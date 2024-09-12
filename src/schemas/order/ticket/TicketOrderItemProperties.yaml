@@ -1,0 +1,73 @@
+type: object
+required:
+  - id
+  - uri
+  - price
+  - service_start_time
+  - service_end_time
+  - experience_name
+  - option_name
+  - contact_localised_experience_name
+  - contact_localised_option_name
+  - contact_localised_price_option_name
+  - price_option_name
+  - service_time_zone
+  - entry_type
+  - entry_units
+  - contact
+  - billing_information
+properties:
+  uri:
+    $ref: '../../dataObjects/Uri.yaml'
+  status:
+    enum: [ 'INACTIVE', 'PENDING_CODE',  'ACTIVE', 'CANCELED' ]
+  price:
+    $ref: '../../dataObjects/Money.yaml'
+  entry_code:
+    $ref: 'fields/TicketCode.yaml'
+  contact_localised_experience_name:
+    type: string
+    description: 'experience name, localised in the contact locale'
+  contact_localised_option_name:
+    type: string
+    description: 'option name, localised in the contact locale'
+  contact_localised_price_option_name:
+    type: string
+    description: 'price option name, localised in the contact locale'
+  experience_name:
+    type: string
+    description: 'experience name, localised by the request'
+  option_name:
+    type: string
+    description: 'option name, localised by the request'
+  price_option_name:
+    type: string
+    description: 'price option name, localised by the request'
+  service_start_time:
+    $ref: '../../dataObjects/DateTime.yaml'
+  service_end_time:
+    $ref: '../../dataObjects/DateTime.yaml'
+  service_time_zone:
+    $ref: '../../dataObjects/TimeZone.yaml'
+  service_duration_in_minutes:
+    type: integer
+    example: 180
+  entry_type:
+    type: string
+    enum: [ 'TIME_SLOT', 'OPENING_HOURS' ]
+  entry_units:
+    type: array
+    items:
+      $ref: '../../dataObjects/EntryUnit.yaml'
+  service_id:
+    $ref: '../../inventory/experience/fields/ExperienceId.yaml'
+  option_id:
+    $ref: '../../inventory/fields/OptionId.yaml'
+  availability_id:
+    $ref: '../../inventory/fields/AvailabilityId.yaml'
+  price_option_id:
+    $ref: '../../inventory/fields/PriceOptionId.yaml'
+  vendor_id:
+    $ref: '../../vendor/fields/VendorId.yaml'
+  contact:
+    $ref: '../fields/OrderItemContact.yaml'

@@ -1,0 +1,15 @@
+type: object
+title: feature
+properties:
+  feature_id:
+    type: string
+    x-faker: lorem.slug
+  feature_name:
+    $ref: '../dataObjects/LocalisedString.yaml'
+  category:
+    $ref: '../dataObjects/LocalisedString.yaml'
+  uri:
+    type: string
+    format: uri
+    x-faker: internet.url
+

@@ -1,0 +1,4 @@
+type: string
+title: File type
+example: 'CSV'
+enum: [ 'PDF','XLSX', 'CSV' ]

@@ -1,0 +1,14 @@
+post:
+  summary: vendors | notify
+  description: send a notification to this vendor
+  operationId: VendorNotificationCreate
+  security:
+    - OAuth2:
+        - vendor_notify
+  parameters:
+    - $ref: '../../parameters/VendorIdParam.yaml'
+  responses:
+    '202':
+      $ref: '../../responses/RequestResponse.yaml'
+    '401':
+      $ref: '../../responses/errors/UnauthorizedResponse.yaml'

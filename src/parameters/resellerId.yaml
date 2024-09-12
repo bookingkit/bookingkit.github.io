@@ -1,0 +1,7 @@
+name: 'resellerId'
+in: path
+description: A valid reseller ID
+required: true
+schema:
+  type: string
+  format: string

@@ -1,0 +1,24 @@
+summary: payout destination | create
+description: create a PayoutDestination
+operationId: PayoutDestinationCreate
+security:
+  - OAuth2:
+      - manage_wallets
+parameters:
+  - $ref: '../../../parameters/VendorIdParam.yaml'
+  - $ref: '../../../parameters/WalletIdParam.yaml'
+requestBody:
+  required: true
+  description: create a payout destination
+  content:
+    application/json:
+      schema:
+        oneOf:
+          - $ref: '../../../schemas/vendor/paymentProvider/BankAccountCreate.yaml'
+responses:
+  '201':
+    $ref: '../../../responses/vendor/paymentProvider/PayoutDestinationResponse.yaml'
+  '401':
+    $ref: '../../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../../responses/errors/NotFoundResponse.yaml'

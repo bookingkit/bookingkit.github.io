@@ -1,0 +1,11 @@
+allOf:
+  - type: object
+    required:
+      - id
+      - uri
+    properties:
+      id:
+        $ref: 'fields/TicketId.yaml'
+      uri:
+        $ref: '../../dataObjects/Uri.yaml'
+  - $ref: 'TicketProperties.yaml'

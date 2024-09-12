@@ -1,0 +1,10 @@
+name: 'options'
+in: query
+description: A comma separated list of valid service option IDs.
+required: false
+style: form
+explode: false
+schema:
+  type: array
+  items:
+    type: string

@@ -1,0 +1,5 @@
+description: a payout request
+content:
+  application/json:
+    schema:
+        $ref: '../../../schemas/StatusResponse.yaml'

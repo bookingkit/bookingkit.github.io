@@ -1,0 +1,5 @@
+description: Informaton about a user access to a reseller
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/user/UserResellerAccess.yaml'

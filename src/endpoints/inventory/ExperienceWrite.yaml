@@ -1,0 +1,16 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/ExperienceIdParam.yaml'
+summary: Experiences | update
+description: update an existing product object, partial updates are prefered, only send properties that change
+security:
+  - OAuth2:
+      - inventory_write
+responses:
+  '200':
+    $ref: '../../responses/inventory/ExperienceResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'
+

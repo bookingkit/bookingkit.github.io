@@ -1,0 +1,12 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/ExperienceIdParam.yaml'
+  - $ref: '../../parameters/PriceCategoryIdParam.yaml'
+summary: PriceCategories | get
+description: returns a price category
+security:
+  - OAuth2:
+      - inventory_read
+responses:
+  '200':
+    $ref: '../../responses/inventory/PriceCategoryResponse.yaml'

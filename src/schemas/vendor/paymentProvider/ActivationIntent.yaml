@@ -1,0 +1,8 @@
+type: object
+required:
+  - type
+properties:
+  type:
+    $ref: 'fields/ActivationIntentType.yaml'
+  date:
+    $ref: '../../dataObjects/DateTime.yaml'

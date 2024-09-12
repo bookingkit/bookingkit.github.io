@@ -1,0 +1,10 @@
+summary: Users | list
+description: returns a list of users
+security:
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UsersListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

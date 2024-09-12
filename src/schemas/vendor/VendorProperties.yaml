@@ -1,0 +1,28 @@
+type: object
+required:
+  - name
+properties:
+  name:
+    type: string
+    x-faker: company.companyName
+  homepage:
+    type: string
+    format: uri
+    x-faker: internet.url
+  logo_preview_size:
+    type: string
+    description: vendor logo size 130px x 130px
+    format: uri
+    example: https://picsum.photos/130/130
+    x-faker: image.business
+  account_number:
+    type: string
+    description: vendors internal account number, only visible for admin users
+    x-faker: datatype.number
+  supported_currencies:
+    type: array
+    description: list of supported currencies
+    items:
+      $ref: '../dataObjects/Currency.yaml'
+  default_currency:
+    $ref: '../dataObjects/Currency.yaml'

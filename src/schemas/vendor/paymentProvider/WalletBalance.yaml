@@ -1,0 +1,19 @@
+type: object
+description: Wallet Balance
+required:
+  - in_wallet
+  - incoming
+  - available_payout
+properties:
+  in_wallet:
+    description: total amount in the wallet
+    $ref: '../../dataObjects/Money.yaml'
+  incoming:
+    description: total amount incoming to the wallet
+    $ref: '../../dataObjects/Money.yaml'
+  available_payout:
+    description: total amount available to pay out
+    $ref: '../../dataObjects/Money.yaml'
+  security_deposit:
+    description: total amount locked due to the security deposit
+    $ref: '../../dataObjects/Money.yaml'

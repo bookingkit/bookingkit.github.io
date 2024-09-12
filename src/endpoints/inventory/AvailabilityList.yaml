@@ -1,0 +1,18 @@
+summary: Availabilities | list
+description: returns a list of availabilities
+security:
+  - OAuth2:
+      - availability_read
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/filterByService.yaml'
+  - $ref: '../../parameters/filterByServiceOptions.yaml'
+  - $ref: '../../parameters/filterByLocalStartTime.yaml'
+  - $ref: '../../parameters/filterByLocalEndTime.yaml'
+  - $ref: '../../parameters/filterByAvailability.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/AvailabilitiesListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

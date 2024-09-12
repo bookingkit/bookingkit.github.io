@@ -1,0 +1,15 @@
+summary: Voucher offer | get
+description: returns a voucher offer
+security:
+  - OAuth2:
+      - inventory_read
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/VoucherOfferIdParam.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/VoucherOfferResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

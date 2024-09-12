@@ -1,0 +1,14 @@
+type: object
+title: User Branch access
+required:
+  - branch_id
+  - role
+properties:
+  branch_id:
+    type: string
+    x-faker: datatype.uuid
+  role:
+    type: string
+    maxLength: 30
+    example: ''
+    x-faker: lorem.word

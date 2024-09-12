@@ -1,0 +1,12 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: Availablity | create
+description: creates a new avaialability
+security:
+  - OAuth2:
+      - availability_write
+responses:
+  '201':
+    $ref: '../../responses/inventory/AvailabilityResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

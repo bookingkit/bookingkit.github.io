@@ -1,0 +1,15 @@
+summary: transactions exports | list
+description: list exports
+operationId: TransactionsExportsList
+security:
+  - OAuth2:
+      - manage_wallets
+parameters:
+  - $ref: '../../../parameters/VendorIdParam.yaml'
+  - $ref: '../../../parameters/page_token.yaml'
+
+responses:
+  '200':
+    $ref: '../../../responses/vendor/paymentProvider/TransactionsExportsListResponse.yaml'
+  '401':
+    $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

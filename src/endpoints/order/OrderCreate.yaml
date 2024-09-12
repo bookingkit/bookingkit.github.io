@@ -1,0 +1,18 @@
+summary: Order | create
+description: creates a new order
+security:
+  - OAuth2:
+      - inventory_write
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/order/OrderCreateProperties.yaml'
+responses:
+  '201':
+    $ref: '../../responses/order/OrderResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

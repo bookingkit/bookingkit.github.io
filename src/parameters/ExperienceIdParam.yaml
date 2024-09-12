@@ -1,0 +1,6 @@
+name: 'experienceId'
+in: path
+description: A valid experience ID
+required: true
+schema:
+  $ref: '../schemas/inventory/experience/fields/ExperienceId.yaml'

@@ -1,0 +1,31 @@
+title: 'BANK_ACCOUNT'
+type: object
+required:
+  - id
+  - country
+  - last_four
+  - bank_name
+  - type
+properties:
+  id:
+    type: string
+    description: The ID of the bank account.
+  country:
+    type: string
+    description: The country of the bank account.
+    example: DE
+    maxLength: 2
+    minLength: 2
+  type:
+    type: string
+    enum:
+      - BANK_ACCOUNT
+  last_four:
+    type: string
+    description: The last four digits of the bank account number.
+    example: '1234'
+    maxLength: 4
+    minLength: 4
+  bank_name:
+    type: string
+    description: The name of the bank.

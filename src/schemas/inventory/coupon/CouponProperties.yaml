@@ -1,0 +1,40 @@
+type: object
+required:
+  - redeem_code
+  - discount
+properties:
+  redeem_code:
+    $ref: 'fields/CouponRedeemCode.yaml'
+  customer_coupon_name:
+    description: coupon name dispayed to the customer
+    $ref: '../../dataObjects/LocalisedString.yaml'
+  customer_coupon_description:
+    description: coupon description dispayed to the customer
+    $ref: '../../dataObjects/LocalisedString.yaml'
+  discount:
+    type: object
+    oneOf:
+      - type: object
+        properties:
+          discount_type:
+            type: string
+            enum: [ "FIXED" ]
+          value:
+            $ref: '../../dataObjects/Money.yaml'
+      - type: object
+        properties:
+          discount_type:
+            type: string
+            enum: [ "RELATIVE" ]
+          value:
+            type: integer
+            description: in permyriad(‱) 1000 will be 10.00%
+  creation_date:
+    $ref: '../../dataObjects/DateTime.yaml'
+  vendor_id:
+    $ref: '../../vendor/fields/VendorId.yaml'
+  active:
+    type: boolean
+    description: |
+      is this coupon still active for the vendor
+      the coupon might still be expired though

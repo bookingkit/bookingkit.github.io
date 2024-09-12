@@ -1,0 +1,10 @@
+summary: Voucher Offers | create
+description: creates a voucher offer
+security:
+  - OAuth2:
+      - inventory_write, manage_payments
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+responses:
+  '201':
+    $ref: '../../responses/inventory/VoucherOfferResponse.yaml'

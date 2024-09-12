@@ -1,0 +1,10 @@
+type: object
+required:
+  - amount
+  - destination
+properties:
+  destination_id:
+    type: string
+    description: The ID of the payout destination.
+  amount:
+    $ref: '../../dataObjects/Money.yaml'

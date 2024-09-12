@@ -1,0 +1,24 @@
+post:
+  summary: payout | create V2
+  description: create a payout V2
+  operationId: WalletPayOutCreateV2
+  security:
+    - OAuth2:
+        - manage_wallets
+  parameters:
+    - $ref: '../../../parameters/VendorIdParam.yaml'
+    - $ref: '../../../parameters/WalletIdParam.yaml'
+  requestBody:
+    required: true
+    description: create a payout
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/vendor/paymentProvider/PayoutCreate.yaml'
+  responses:
+    '201':
+      $ref: '../../../responses/vendor/paymentProvider/WalletPayOutResponse.yaml'
+    '401':
+      $ref: '../../../responses/errors/UnauthorizedResponse.yaml'
+    '404':
+      $ref: '../../../responses/errors/NotFoundResponse.yaml'

@@ -1,0 +1,15 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/VoucherIdParam.yaml'
+summary: Vouchers | get
+description: returns an voucher object
+security:
+  - OAuth2:
+      - manage_payments
+responses:
+  '200':
+    $ref: '../../responses/order/VoucherResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

@@ -1,0 +1,13 @@
+type: object
+title: 'Entry unit'
+required:
+  - status
+  - descriptor
+properties:
+  descriptor:
+    type: string
+    enum: [ "ADULT" , "CHILD" , "STUDENT" , "SENIOR" ,  "OTHER" ]
+  status:
+    enum: [ "VALID", "CHECKED_IN", "CHECKED_OUT" ]
+  status_changed_at:
+    $ref: 'DateTime.yaml'

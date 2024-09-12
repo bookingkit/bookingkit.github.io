@@ -1,0 +1,6 @@
+name: 'availabilityId'
+in: path
+description: A valid voucher offer ID
+required: true
+schema:
+  $ref: '../schemas/inventory/fields/AvailabilityId.yaml'

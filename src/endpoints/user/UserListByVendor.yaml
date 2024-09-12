@@ -1,0 +1,17 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: Users | get for vendor
+description: returns a user list
+security:
+  - OAuth2:
+      - user_read
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UsersListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'
+

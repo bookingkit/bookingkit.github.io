@@ -1,0 +1,24 @@
+title: 'TICKET'
+allOf:
+  - type: object
+    required:
+      - id
+      - uri
+      - order_item_type
+      - price
+      - status
+      - entry_code
+      - service_id
+      - option_id
+      - availability_id
+      - price_option_id
+      - vendor_id
+    properties:
+      order_item_type:
+        type: string
+        enum: [ "TICKET" ]
+      id:
+        $ref: '../ticket/fields/TicketId.yaml'
+      uri:
+        $ref: '../../dataObjects/Uri.yaml'
+  - $ref: '../ticket/TicketOrderItemProperties.yaml'

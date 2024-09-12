@@ -1,0 +1,15 @@
+type: object
+properties:
+  value:
+    type: integer
+    description: expressed in cents (or equvalent per currency). So 1500 is 15.00€
+    example: 1500
+    x-faker:
+      datatype.number:
+        min: 0
+        max: 100000
+        precision: 1
+  currency:
+    $ref: '../dataObjects/Currency.yaml'
+
+

@@ -1,0 +1,11 @@
+summary: Voucher offer | update
+description: update a voucher offer
+security:
+  - OAuth2:
+      - inventory_write, manage_payments
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/VoucherOfferIdParam.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/VoucherOfferResponse.yaml'

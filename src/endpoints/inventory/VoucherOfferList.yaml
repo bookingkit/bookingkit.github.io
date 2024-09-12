@@ -1,0 +1,13 @@
+summary: Voucher Offers | list
+description: returns a list of voucher purchasing options that the vendor allows
+security:
+  - OAuth2:
+      - inventory_read
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/VoucherOffersListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

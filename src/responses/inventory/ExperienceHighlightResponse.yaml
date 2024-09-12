@@ -1,0 +1,5 @@
+description: A highlight object
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/inventory/experience/experienceHighlight/ExperienceHighlight.yaml'

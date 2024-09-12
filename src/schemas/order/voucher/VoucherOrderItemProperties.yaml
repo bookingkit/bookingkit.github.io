@@ -1,0 +1,15 @@
+type: object
+title: Voucher
+required:
+  - price
+  - initial_value
+properties:
+  price:
+    $ref: '../../dataObjects/Money.yaml'
+  status:
+    enum: [ 'INACTIVE', 'PENDING_CODE', 'ACTIVE', 'CANCELED' ]
+  initial_value:
+    $ref: '../../dataObjects/Money.yaml'
+  redeem_code:
+    $ref: 'fields/VoucherRedeemCode.yaml'
+

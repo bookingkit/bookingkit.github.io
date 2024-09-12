@@ -1,0 +1,125 @@
+type: object
+title: Order
+required:
+  - vendor_id
+  - order_date
+  - last_update_date
+  - status
+  - contact
+  - order_items
+  - sales_channel
+  - customer_payment_status
+  - customer_open_amount
+  - total_value
+  - additional_fields
+  - metadata
+  - discounts
+properties:
+  code:
+    $ref: 'fields/OrderCode.yaml'
+  external_reference:
+    type: string
+    maxLength: 255
+    description: third party systems that generated this order may write their own identifier here
+  vendor_id:
+    $ref: '../vendor/fields/VendorId.yaml'
+  order_date:
+    $ref: '../dataObjects/DateTime.yaml'
+  last_update_date:
+    $ref: '../dataObjects/DateTime.yaml'
+  expiration_date:
+    $ref: '../dataObjects/DateTime.yaml'
+  cancellation_date:
+    $ref: '../dataObjects/DateTime.yaml'
+  sales_source:
+    type: string
+    description: "name of the source  (GYG...)"
+  sales_channel:
+    type: string
+    description: "how the order reached our system"
+    enum: [ "CHECKOUT", "RESELLER_CHECKOUT", "MOBILE_APP", "IMPORT", "ADMIN", "POS", "REACH" ]
+  status:
+    type: string
+    enum: [ "ACCEPTED", "PENDING", "ON_HOLD", "CANCELED", "RESERVED", "DECLINED", "FAILURE", "OBSOLETE", "ARCHIVED", "ABANDONED", "OPEN" ]
+  customer_payment_status:
+    type: string
+    description: the payment status from the customers perspective
+    enum: [ "PAID", "UNPAID" , "PARTIALLY_PAID" , "REFUNDED", "PARTIALLY_REFUNDED" ]
+  customer_open_amount:
+    description: |
+      the amount the customer still has to pay,
+      0 if the customer_payment_status is PAID
+    $ref: '../dataObjects/Money.yaml'
+  total_value:
+    description: 'sum of order items net values minus discounts'
+    $ref: '../dataObjects/Money.yaml'
+  locale:
+    description: 'the language order items details are delivered in'
+    $ref: '../dataObjects/Locale.yaml'
+  contact:
+    $ref: 'fields/OrderContact.yaml'
+  billing_information:
+    $ref: 'fields/BillingInformation.yaml'
+  additional_fields:
+    type: array
+    description: 'checkout fields to be captured'
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '7215ee9c7d9dc229d2921a40e899ec5f'
+          x-faker: datatype.uuid
+        title:
+          type: string
+          example: 'Pickup location'
+        value:
+          type: string
+          example: 'Rome'
+  metadata:
+    type: array
+    description: 'additional data you can store on the order object'
+    items:
+      type: object
+      properties:
+        key:
+          type: string
+          minLength: 2
+          maxLength: 100
+        value:
+          type: string
+          minLength: 1
+          maxLength: 500
+  discounts:
+    type: array
+    items:
+      anyOf:
+        - type: object
+          title: 'DIRECT_DISCOUNT'
+          required:
+            - discount_type
+            - value
+          properties:
+            discount_type:
+              type: string
+              enum: [ 'DIRECT_DISCOUNT' ]
+            value:
+              $ref: '../dataObjects/Money.yaml'
+        - type: object
+          title: 'COUPON'
+          required:
+            - discount_type
+            - coupon_id
+            - value
+          properties:
+            discount_type:
+              type: string
+              enum: [ 'COUPON' ]
+            coupon_id:
+              type: string
+              example: '7215ee9c7d9dc229d2921a40e899ec5f'
+              x-faker: datatype.uuid
+            value:
+              $ref: '../dataObjects/Money.yaml'
+  order_items:
+    $ref: 'OrderItems.yaml'

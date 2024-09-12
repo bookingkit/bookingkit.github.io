@@ -1,0 +1,5 @@
+type: string
+title: payment provider id
+example: 'STRIPE'
+enum: [ 'STRIPE','MANGOPAY','PAYPAL' ]
+maxLength: 16

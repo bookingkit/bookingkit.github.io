@@ -1,0 +1,14 @@
+type: object
+required:
+  - text
+  - sort
+properties:
+  text:
+    type: string
+    description: "example description"
+    maxLength: 255
+    example: "example"
+  sort:
+    type: integer
+    description: "example description"
+    example: "example"

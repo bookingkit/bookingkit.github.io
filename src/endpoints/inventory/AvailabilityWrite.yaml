@@ -1,0 +1,15 @@
+summary: Availability | update
+description: update an existing availability object, partial updates are prefered, only send properties that change
+security:
+  - OAuth2:
+      - availability_write
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/AvailabilityIdParam.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/AvailabilityResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

@@ -1,0 +1,25 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: vendors | update
+description: update an existing vendor object, partial updates are prefered, only send properties that change
+operationId: VendorUpdate
+security:
+  - OAuth2:
+      - vendor_write
+  - OAuth2:
+      - global_vendor_write
+requestBody:
+  required: true
+  description: only add properties that you whant to change
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/vendor/Vendor.yaml'
+
+responses:
+  '200':
+    $ref: '../../responses/vendor/VendorResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

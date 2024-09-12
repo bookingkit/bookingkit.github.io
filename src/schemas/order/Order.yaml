@@ -1,0 +1,12 @@
+allOf:
+  - type: object
+    required:
+      - id
+      - uri
+      - code
+    properties:
+      id:
+        $ref: 'fields/OrderId.yaml'
+      uri:
+        $ref: '../dataObjects/Uri.yaml'
+  - $ref: 'OrderProperties.yaml'

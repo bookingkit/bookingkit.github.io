@@ -1,0 +1,29 @@
+type: object
+required:
+  - title
+  - duration_minutes
+properties:
+  title:
+    type: string
+    description: "example description"
+    maxLength: 255
+    example: "example"
+  duration_minutes:
+    $ref: '../../dataObjects/Duration.yaml'
+  experience_option_type:
+    type: string
+    description: 'todo - a dedicated type object, tbd if multiple objects (duration_option_type, service_language....) or one generic one'
+  prices:
+    type: array
+    description: a list of prices
+    items:
+      type: object
+      properties:
+        id:
+          $ref: '../fields/ExperienceOptionPriceId.yaml'
+        price_category_id:
+          $ref: '../fields/PriceCategoryId.yaml'
+        price:
+          $ref: '../../dataObjects/Money.yaml'
+
+

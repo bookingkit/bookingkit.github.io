@@ -1,0 +1,14 @@
+type: object
+required:
+  - status
+  - error_code
+properties:
+  status:
+    type: number
+    description: HTTP status code (for convenience, same as the header)
+  error_message:
+    type: string
+    description: optional details concerning the error, always in english
+  error_code:
+    type: string
+    description: describes the error

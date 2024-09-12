@@ -1,0 +1,5 @@
+description: a payment provider
+content:
+  application/json:
+    schema:
+      $ref: '../../../schemas/vendor/paymentProvider/PaymentProvider.yaml'

@@ -1,0 +1,44 @@
+type: object
+description: payment provider wallet
+required:
+  - id
+  - uri
+  - from_date
+  - to_date
+  - format
+  - locale
+  - status
+  - creation_date
+properties:
+  id:
+    $ref: 'fields/TransactionsExportId.yaml'
+  uri:
+    $ref: '../../dataObjects/Uri.yaml'
+  status:
+    $ref: 'fields/TransactionsExportStatus.yaml'
+  from_date:
+    description: earliest DateTime INCLUDED in the export (>=)
+    $ref: '../../dataObjects/DateTime.yaml'
+  to_date:
+    description: earliest DateTime EXCLUDED in the export (<)
+    $ref: '../../dataObjects/DateTime.yaml'
+  format:
+    description: file format
+    $ref: 'fields/TransactionsExportFileType.yaml'
+  locale:
+    description: locale for the export
+    $ref: '../../dataObjects/Locale.yaml'
+  file_uri:
+    description: Uri to download the file from
+    $ref: '../../dataObjects/Uri.yaml'
+  expiry_date:
+    description: DateTime when this export will expire and no longer be available
+    $ref: '../../dataObjects/DateTime.yaml'
+  creation_date:
+    description: DateTime of the creation for this export
+    $ref: '../../dataObjects/DateTime.yaml'
+  completion_date:
+    description: DateTime of the completion for this export
+    $ref: '../../dataObjects/DateTime.yaml'
+
+

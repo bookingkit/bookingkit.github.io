@@ -1,0 +1,17 @@
+type: object
+title: User
+properties:
+  full_name:
+    type: string
+    minLength: 3
+    maxLength: 100
+    example: John Doe
+    x-faker: name.findName
+  email:
+    type: string
+    format: email
+    minLength: 3
+    maxLength: 100
+    x-faker: internet.email
+  locale:
+    $ref: '../dataObjects/Locale.yaml'

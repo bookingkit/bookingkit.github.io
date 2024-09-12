@@ -1,0 +1,13 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/ExperienceIdParam.yaml'
+summary: Experiences | delete
+description: |
+  remove an existing product from your inventory.
+  This will remove all availabilites without active bookings
+  and remove all free seats on availabilties with active bookings
+security:
+  - OAuth2:
+      - inventory_write
+responses:
+  $ref: '../../responseTypes/DelayedDeletionEndpointResponses.yaml'

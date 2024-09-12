@@ -1,0 +1,16 @@
+type: object
+required:
+  - status
+  - recoverable
+properties:
+  status:
+    type: string
+    enum: ["SUCCEEDED","FAILURE"]
+  recoverable:
+    type: boolean
+    description: can this object be restored after deletion
+  recover_uri:
+    description: URI to restore this object
+    type: string
+  fail_reason:
+    type: string

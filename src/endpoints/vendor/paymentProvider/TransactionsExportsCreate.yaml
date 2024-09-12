@@ -1,0 +1,42 @@
+summary: transactions exports | create
+description: requests a new transactions export
+operationId: TransactionsExportsCreate
+security:
+  - OAuth2:
+      - manage_wallets
+requestBody:
+  required: true
+  description: request a new transactions export
+  content:
+    application/json:
+      schema:
+        $ref: '../../../schemas/vendor/paymentProvider/TransactionsExportRequest.yaml'
+callbacks:
+  exportAvailable:
+    '{$request.body#/callback_url}':
+      post:
+        parameters:
+          - in: header
+            name: Authorization
+            description: Bearer '{$request.body#/callback_token}'
+            schema:
+              type: string
+        requestBody:
+          required: true
+          description: export is now available
+          content:
+            application/json:
+              schema:
+                $ref: '../../../schemas/vendor/paymentProvider/TransactionsExport.yaml'
+        responses:
+          '200':
+            description: Your server returns this code if it accepts the callback
+responses:
+  '201':
+    description: transactions export has been created
+    content:
+      application/json:
+        schema:
+          $ref: '../../../schemas/vendor/paymentProvider/TransactionsExport.yaml'
+  '401':
+    $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

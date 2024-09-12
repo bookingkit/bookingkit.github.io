@@ -1,0 +1,18 @@
+summary: User | create
+description: creates a new user
+security:
+  - OAuth2:
+      - user_write
+  - OAuth2:
+      - global_user_write
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/user/UserProperties.yaml'
+responses:
+  '201':
+    $ref: '../../responses/user/UserResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

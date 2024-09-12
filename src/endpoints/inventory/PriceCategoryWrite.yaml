@@ -1,0 +1,17 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/ExperienceIdParam.yaml'
+  - $ref: '../../parameters/PriceCategoryIdParam.yaml'
+summary: PriceCategories | update
+description: update an existing price category, partial updates are preferred, only send properties that change
+security:
+  - OAuth2:
+      - inventory_write
+responses:
+  '201':
+    $ref: '../../responses/inventory/PriceCategoryResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'
+

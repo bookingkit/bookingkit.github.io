@@ -1,0 +1,13 @@
+summary: Experiences | list
+description: returns a list of products
+security:
+  - OAuth2:
+      - inventory_read
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/ExperienceListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

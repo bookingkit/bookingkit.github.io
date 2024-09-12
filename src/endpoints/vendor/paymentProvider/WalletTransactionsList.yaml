@@ -1,0 +1,39 @@
+get:
+  summary: wallet transactions | list
+  description: list payment providers
+  operationId: WalletTransactionsList
+  security:
+    - OAuth2:
+        - manage_wallets
+  parameters:
+    - $ref: '../../../parameters/VendorIdParam.yaml'
+    - $ref: '../../../parameters/WalletIdParam.yaml'
+    - name: 'from'
+      in: query
+      description: |
+        The earliest execution time acceptable, the provided time is included (>=)
+      required: false
+      schema:
+        type: string
+        format: date-time
+    - name: 'until'
+      in: query
+      description: |
+        The latest execution time acceptable, the provided time is NOT included (<)
+      required: false
+      schema:
+        type: string
+        format: date-time
+    - name: 'types'
+      in: query
+      description: transaction type
+      required: false
+      schema:
+        $ref: '../../../schemas/vendor/paymentProvider/fields/WalletTransactionType.yaml'
+    - $ref: '../../../parameters/page_token.yaml'
+
+  responses:
+    '200':
+      $ref: '../../../responses/vendor/paymentProvider/WalletTransactionsListResponse.yaml'
+    '401':
+      $ref: '../../../responses/errors/UnauthorizedResponse.yaml'

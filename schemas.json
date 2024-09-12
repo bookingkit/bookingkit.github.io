@@ -1,0 +1,31 @@
+{
+  "MetaData": {
+    "type": "object"
+  },
+  "RequestResponse": {
+    "type": "object"
+  },
+  "Vendor": {
+    "type": "object"
+  },
+  "VendorResponse": {
+    "$ref": "#/components/schemas/Vendor"
+  },
+  "VendorListResponse": {
+    "type": "object",
+    "properties": {
+      "metadata": {
+        "type": "object",
+        "items": {
+          "$ref": "#/components/schemas/MetaData"
+        }
+      },
+      "data": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Vendor"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+openapi: 3.0.0
+
+info:
+  description: beta INVENTORY API, only for internal use
+  version: "0.0.1"
+  title: '[BETA] bookingkit INVENTORY API V4'
+  contact:
+    name: API Support
+    email: service@bookingkit.net
+servers:
+  - url: https://beta.api-v4.bookingkit.de
+    description: production server
+  - url: https://sandbox.beta.vendors.api-v4.bookingkit.de
+    description: development sandbox
+security:
+  - OAuth2: [admin]
+
+paths:
+  /vendors/{vendorId}/inventory/experiences:
+    get:
+      $ref: '../src/endpoints/inventory/ExperienceList.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/ExperienceCreate.yaml'
+
+  /vendors/{vendorId}/inventory/experiences/{experienceId}:
+    get:
+      $ref: '../src/endpoints/inventory/ExperienceRead.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/ExperienceWrite.yaml'
+    delete:
+      $ref: '../src/endpoints/inventory/ExperienceDelete.yaml'
+
+  /vendors/{vendorId}/inventory/experiences/{experienceId}/priceCategories:
+    get:
+      $ref: '../src/endpoints/inventory/PriceCategoryList.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/PriceCategoryCreate.yaml'
+
+  /vendors/{vendorId}/inventory/experiences/{experienceId}/priceCategories/{priceCategoryId}:
+    get:
+      $ref: '../src/endpoints/inventory/PriceCategoryRead.yaml'
+    put:
+      $ref: '../src/endpoints/inventory/PriceCategoryWrite.yaml'
+
+  /vendors/{vendorId}/inventory/experiences/{experienceId}/options:
+    post:
+      $ref: '../src/endpoints/inventory/ExperienceOptionCreate.yaml'
+
+  /vendors/{vendorId}/inventory/experiences/{experienceId}/highlights/{highlightId}:
+    get:
+      $ref: '../src/endpoints/inventory/ExperienceHighlightRead.yaml'
+
+  /vendors/{vendorId}/inventory/availabilites:
+    get:
+      $ref: '../src/endpoints/inventory/AvailabilityList.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/AvailabilityCreate.yaml'
+
+  /vendors/{vendorId}/inventory/availabilites/{availabilityId}:
+    get:
+      $ref: '../src/endpoints/inventory/AvailabilityRead.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/AvailabilityWrite.yaml'
+    delete:
+      $ref: '../src/endpoints/inventory/AvailabilityDelete.yaml'
+
+  /vendors/{vendorId}/inventory/voucherOffers:
+    get:
+      $ref: '../src/endpoints/inventory/VoucherOfferList.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/VoucherOfferCreate.yaml'
+
+  /vendors/{vendorId}/inventory/voucherOffers/{voucherOfferId}:
+    get:
+      $ref: '../src/endpoints/inventory/VoucherOfferRead.yaml'
+    post:
+      $ref: '../src/endpoints/inventory/VoucherOfferWrite.yaml'
+    delete:
+      $ref: '../src/endpoints/inventory/VoucherOfferDelete.yaml'
+
+components:
+  securitySchemes:
+    OAuth2:
+      $ref: '../src/security/Oauth2SecuritySchema.yaml'

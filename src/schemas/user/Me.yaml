@@ -1,0 +1,20 @@
+type: object
+title: Me
+properties:
+  user:
+    $ref: "User.yaml"
+  selected_vendor:
+    allOf:
+      - deprecated: true
+        description: |
+          This information is delivered for legacy systems and will be removed.
+          Do not build any new functionality using this information
+      - $ref: "UserVendorAccess.yaml"
+  selected_reseller:
+    allOf:
+      - $ref: "UserResellerAccess.yaml"
+      - deprecated: true
+      - description: |
+          This information is delivered for legacy systems and will be removed.
+          Do not build any new functionality using this information
+

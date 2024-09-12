@@ -1,0 +1,6 @@
+name: 'userId'
+in: path
+description: A valid User ID
+required: true
+schema:
+  $ref: '../schemas/user/fields/UserId.yaml'

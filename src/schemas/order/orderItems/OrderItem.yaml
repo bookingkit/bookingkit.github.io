@@ -1,0 +1,16 @@
+type: object
+title: 'SURCHARGE'
+required:
+  - id
+  - price
+properties:
+  id:
+    type: string
+  order_item_type:
+    type: string
+    enum: [ 'SURCHARGE' ]
+  surcharge_type:
+    type: string
+    enum: [ 'CANCELLATION', 'REBOOKING', 'PAYMENT' ]
+  price:
+    $ref: '../../dataObjects/Money.yaml'

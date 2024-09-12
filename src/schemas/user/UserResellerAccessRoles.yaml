@@ -1,0 +1,18 @@
+type: object
+title: UserResellerAccessRole
+required:
+  - role_name
+  - role_type
+  - role_description
+properties:
+  role_name:
+    type: string
+    example: ''
+    x-faker: lorem.word
+  role_type:
+    type: string
+    enum: ['reseller', 'branch']
+  role_description:
+    type: string
+    example: ''
+    x-faker: lorem.sentence

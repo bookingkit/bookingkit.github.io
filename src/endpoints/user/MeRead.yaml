@@ -1,0 +1,9 @@
+summary: Me | Get my user
+description: returns my current user
+security:
+  - OAuth2: [ ]
+responses:
+  '200':
+    $ref: '../../responses/user/MeResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

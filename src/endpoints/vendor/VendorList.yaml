@@ -1,0 +1,15 @@
+summary: vendors | list
+description: returns a list of vendors you have access to
+operationId: VendorsList
+security:
+  - OAuth2:
+      - vendor_read
+  - OAuth2:
+      - global_vendor_read
+parameters:
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/vendor/VendorsListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

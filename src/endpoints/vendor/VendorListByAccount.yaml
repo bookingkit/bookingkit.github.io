@@ -1,0 +1,16 @@
+parameters:
+  - $ref: '../../parameters/QueryParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+summary: vendors | match account
+description: returns a list of vendors matching your query by acoount name or account number
+operationId: VendorsListByAccount
+security:
+  - OAuth2:
+      - vendor_read
+  - OAuth2:
+      - global_vendor_read
+responses:
+  '200':
+    $ref: '../../responses/vendor/VendorsListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

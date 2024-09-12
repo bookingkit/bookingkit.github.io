@@ -1,0 +1,5 @@
+description: An order object
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/order/Order.yaml'

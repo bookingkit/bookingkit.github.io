@@ -1,0 +1,6 @@
+type: string
+title: redeemable code
+example: ADB-DEF-GHIJ
+x-faker: internet.password
+minLength: 5
+maxLength: 30

@@ -1,0 +1,13 @@
+parameters:
+  - $ref: '../../parameters/UserIdParam.yaml'
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: User Vendor access | remove
+description: removes the access for this user for a vendor
+security:
+  - OAuth2:
+      - user_write
+  - OAuth2:
+      - global_user_write
+responses:
+  $ref: '../../responseTypes/DelayedDeletionEndpointResponses.yaml'
+

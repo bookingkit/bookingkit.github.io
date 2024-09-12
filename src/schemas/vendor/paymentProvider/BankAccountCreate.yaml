@@ -1,0 +1,27 @@
+type: object
+title: 'BANK_ACCOUNT'
+required:
+  - country
+  - currency
+  - accountNumber
+  - type
+properties:
+  type:
+    type: string
+    enum: [ BANK_ACCOUNT ]
+  country:
+    type: string
+    minLength: 2
+    maxLength: 2
+    description: ISO 3166-1 alpha-2 country code
+  currency:
+    type: string
+    minLength: 3
+    maxLength: 3
+    description: ISO 4217 currency code
+  account_number:
+    type: string
+    description: Account number
+  routing_number:
+    type: string
+    description: Routing number

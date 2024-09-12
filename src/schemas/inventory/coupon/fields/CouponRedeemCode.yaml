@@ -1,0 +1,5 @@
+type: string
+example: SALE10
+x-faker: internet.password
+minLength: 5
+maxLength: 30

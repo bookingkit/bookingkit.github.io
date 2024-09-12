@@ -1,0 +1,7 @@
+description: |
+  The result of a DELETE operation,
+  An "Accepted" Header (202) means the deletion will require time to complete
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/ResourceDeletionResult.yaml'

@@ -1,0 +1,15 @@
+summary: Orders | list
+description: returns a list of orders
+security:
+  - OAuth2:
+      - order_read_owned
+  - OAuth2:
+      - order_read
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/order/OrdersListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

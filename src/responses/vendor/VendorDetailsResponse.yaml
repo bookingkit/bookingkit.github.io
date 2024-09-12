@@ -1,0 +1,5 @@
+description: A vendor details object
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/vendor/VendorDetails.yaml'

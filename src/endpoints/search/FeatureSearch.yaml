@@ -1,0 +1,13 @@
+summary: features
+description: returns a list of feature seach results
+security:
+  - OAuth2: [ ]
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/QueryParam.yaml'
+  - $ref: '../../parameters/page_token.yaml'
+responses:
+  '200':
+    $ref: '../../responses/FeaturesListResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

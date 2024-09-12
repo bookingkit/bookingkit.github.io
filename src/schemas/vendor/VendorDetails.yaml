@@ -1,0 +1,34 @@
+type: object
+properties:
+  logo_original_size:
+    type: string
+    description: vendor logo original size, as provided by the vendor
+    format: uri
+    example: https://picsum.photos/3000/2000
+  customer_support_contact:
+    type: object
+    properties:
+      email:
+        type: string
+        format: email
+        maxLength: 100
+        x-faker: internet.email
+      phone:
+        type: string
+        x-faker: phone.phoneNumber
+  vendor_business_contact:
+    type: object
+    properties:
+      name:
+        type: string
+        description: contact name for the vendor
+        maxLength: 100
+      email:
+        type: string
+        format: email
+        maxLength: 100
+        x-faker: internet.email
+      phone:
+        type: string
+        x-faker: phone.phoneNumber
+

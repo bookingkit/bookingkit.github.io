@@ -1,0 +1,10 @@
+type: object
+title: UserVendorAccessScope
+required:
+  - scope_name
+  - scope_description
+properties:
+  scope_name:
+    type: string
+  scope_description:
+    type: string

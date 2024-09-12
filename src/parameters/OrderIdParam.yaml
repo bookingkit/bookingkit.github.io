@@ -1,0 +1,6 @@
+name: 'orderId'
+in: path
+description: A valid order ID
+required: true
+schema:
+  $ref: '../schemas/order/fields/OrderId.yaml'

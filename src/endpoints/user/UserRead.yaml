@@ -1,0 +1,19 @@
+parameters:
+  - $ref: '../../parameters/UserIdParam.yaml'
+summary: Users | get
+description: |
+  returns a user object
+  * only if the client has user read access for a vendor that is connected this user
+  * or has global access
+security:
+  - OAuth2:
+      - user_read
+  - OAuth2:
+      - global_user_read
+responses:
+  '200':
+    $ref: '../../responses/user/UserResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

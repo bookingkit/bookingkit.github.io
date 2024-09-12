@@ -1,0 +1,24 @@
+type: object
+description: payment provider wallet
+required:
+  - id
+  - uri
+  - payment_provider_id
+  - balance
+properties:
+  id:
+    $ref: 'fields/WalletId.yaml'
+  uri:
+    $ref: '../../dataObjects/Uri.yaml'
+  payment_provider_id:
+    $ref: 'fields/PaymentProviderId.yaml'
+  balance:
+    $ref: 'WalletBalance.yaml'
+  available_capabilities:
+    type: array
+    items:
+      $ref: 'fields/WalletCapability.yaml'
+  pending_transactions:
+    type: array
+    items:
+      $ref: 'WalletTransaction.yaml'

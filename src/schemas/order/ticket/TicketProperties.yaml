@@ -1,0 +1,15 @@
+allOf:
+  - type: object
+    properties:
+      creation_date:
+        $ref: '../../dataObjects/DateTime.yaml'
+      status:
+        type: string
+        enum: [ 'VALID', 'REDEEMED', 'CANCELED', 'EXPIRED' , 'ONHOLD' ]
+      redeem_methods:
+        type: array
+        description: instructions on how the ticket can be used
+        items:
+          type: string
+          enum: [ 'DIGITAL' , 'PRINT' , 'MANIFEST' ]
+  - $ref: 'TicketOrderItemProperties.yaml'

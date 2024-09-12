@@ -1,0 +1,14 @@
+title: 'FLEXIBLE_TICKET'
+type: object
+required:
+  - flexible_offer_id
+  - flexible_offer_price_id
+properties:
+  redeem_code:
+    $ref: '../service_voucher/fields/ServiceVoucherRedeemCode.yaml'
+  price:
+    $ref: '../../dataObjects/Money.yaml'
+  flexible_offer_id:
+    $ref: '../../inventory/fields/ServiceVoucherOfferId.yaml'
+  flexible_offer_price_id:
+    type: string

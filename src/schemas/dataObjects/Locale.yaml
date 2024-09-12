@@ -1,0 +1,5 @@
+type: string
+description: |
+  localisation code, can be generic: en or specific en-US
+pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+example: en-US

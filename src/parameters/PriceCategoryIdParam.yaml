@@ -1,0 +1,6 @@
+name: 'priceCategoryId'
+in: path
+description: A valid price category ID
+required: true
+schema:
+  $ref: '../schemas/inventory/fields/PriceCategoryId.yaml'

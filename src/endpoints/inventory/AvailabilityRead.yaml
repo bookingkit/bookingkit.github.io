@@ -1,0 +1,15 @@
+summary: Availability | get
+description: returns an availability
+security:
+  - OAuth2:
+      - availability_read
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/AvailabilityIdParam.yaml'
+responses:
+  '200':
+    $ref: '../../responses/inventory/AvailabilityResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

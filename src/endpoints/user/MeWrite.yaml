@@ -1,0 +1,16 @@
+summary: Me | Update my user
+description: updates my current user
+security:
+  - OAuth2: [ ]
+requestBody:
+  required: true
+  description: only add properties that you whant to change
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/user/Me.yaml'
+responses:
+  '200':
+    $ref: '../../responses/user/MeResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

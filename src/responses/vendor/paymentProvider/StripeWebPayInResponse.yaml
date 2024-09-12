@@ -1,0 +1,7 @@
+description: a stripe web payin request
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        $ref: '../../../schemas/vendor/paymentProvider/StripeWebPayIn.yaml'

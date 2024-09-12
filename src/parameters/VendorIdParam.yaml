@@ -1,0 +1,6 @@
+name: 'vendorId'
+in: path
+description: A valid vendor ID that matches the `id` returned from `GET /vendors`.
+required: true
+schema:
+  $ref: '../schemas/vendor/fields/VendorId.yaml'

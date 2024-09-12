@@ -1,0 +1,82 @@
+type: object
+required:
+  - status
+  - order_item_type
+  - price
+  - redeemable_experiences
+  - redemptions_included
+  - redemptions_remaining
+  - flexible_offer_id
+  - flexible_offer_price_id
+  - vendor_id
+properties:
+  redeem_code:
+    $ref: 'fields/ServiceVoucherRedeemCode.yaml'
+  price:
+    $ref: '../../dataObjects/Money.yaml'
+  status:
+    enum: [ 'INACTIVE', 'PENDING_CODE',  'ACTIVE', 'CANCELED' ]
+  redeemable_experiences:
+    type: array
+    items:
+      type: object
+      required:
+        - experience_id
+        - contact_localised_experience_name
+        - experience_name
+      properties:
+        experience_id:
+          $ref: '../../inventory/experience/fields/ExperienceId.yaml'
+        contact_localised_experience_name:
+          type: string
+          description: 'experience name, localised in the contact locale'
+        experience_name:
+          type: string
+          description: 'experience name, localised by the request'
+        options:
+          type: array
+          items:
+            type: object
+            required:
+              - option_id
+              - contact_localised_option_name
+              - option_name
+              - price_options
+            properties:
+              option_id:
+                $ref: '../../inventory/fields/OptionId.yaml'
+              contact_localised_option_name:
+                type: string
+                description: 'option name, localised in the contact locale'
+              option_name:
+                type: string
+                description: 'option name, localised by the request'
+              price_options:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - price_option_id
+                    - contact_localised_price_option_name
+                    - price_option_name
+                  properties:
+                    price_option_id:
+                      $ref: '../../inventory/fields/PriceOptionId.yaml'
+                    contact_localised_price_option_name:
+                      type: string
+                      description: 'price option name, localised in the contact locale'
+                    price_option_name:
+                      type: string
+                      description: 'price option name, localised by the request'
+  redemption_period:
+    $ref: '../../dataObjects/TimePeriod.yaml'
+  redemptions_included:
+    type: integer
+  redemptions_remaining:
+    type: integer
+  flexible_offer_id:
+    $ref: '../../inventory/fields/ServiceVoucherOfferId.yaml'
+  flexible_offer_price_id:
+    type: string
+  vendor_id:
+    $ref: '../../vendor/fields/VendorId.yaml'

@@ -1,0 +1,5 @@
+type: string
+title: transactions export id
+example: '7215ee9c7d9dc229d2921a40e899ec5f'
+x-faker: datatype.uuid
+maxLength: 64

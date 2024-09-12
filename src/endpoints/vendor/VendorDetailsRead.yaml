@@ -1,0 +1,17 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: vendor details | get
+description: returns a vendor details object
+operationId: VendorDetailsRead
+security:
+  - OAuth2:
+      - vendor_read
+  - OAuth2:
+      - global_vendor_read
+responses:
+  '200':
+    $ref: '../../responses/vendor/VendorDetailsResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'
+  '404':
+    $ref: '../../responses/errors/NotFoundResponse.yaml'

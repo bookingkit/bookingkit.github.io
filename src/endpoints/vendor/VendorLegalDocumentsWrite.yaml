@@ -1,0 +1,22 @@
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+summary: legal documents | replace
+description: replace vendors legal documents
+operationId: VendorLegalDocumentsWrite
+security:
+  - OAuth2:
+      - vendor_write
+  - OAuth2:
+      - global_vendor_write
+requestBody:
+  required: true
+  description: update vendors legal documents, partial updates are prefered, only send properties that change
+  content:
+    application/json:
+      schema:
+        $ref: '../../schemas/vendor/VendorLegalDocuments.yaml'
+responses:
+  '201':
+    $ref: '../../responses/vendor/VendorResponse.yaml'
+  '401':
+    $ref: '../../responses/errors/UnauthorizedResponse.yaml'

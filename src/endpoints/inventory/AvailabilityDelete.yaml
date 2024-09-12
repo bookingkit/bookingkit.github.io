@@ -1,0 +1,10 @@
+summary: Availability | delete
+description: delete an existing availability object
+security:
+  - OAuth2:
+      - availability_write
+parameters:
+  - $ref: '../../parameters/VendorIdParam.yaml'
+  - $ref: '../../parameters/AvailabilityIdParam.yaml'
+responses:
+  $ref: '../../responseTypes/DelayedDeletionEndpointResponses.yaml'

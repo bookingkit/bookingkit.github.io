@@ -1,0 +1,8 @@
+name: 'from'
+in: query
+description: |
+  The earliest time acceptable, the provided time is included (>=)
+required: false
+schema:
+  type: string
+  format: date-time

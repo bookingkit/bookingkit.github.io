@@ -1,0 +1,32 @@
+openapi: 3.0.0
+
+info:
+  description: beta ORDER API, only for internal use
+  version: "0.0.1"
+  title: '[BETA] bookingkit ORDER API V4'
+  contact:
+    name: API Support
+    email: service@bookingkit.net
+servers:
+  - url: https://beta.api-v4.bookingkit.de
+    description: production server
+  - url: https://sandbox.beta.vendors.api-v4.bookingkit.de
+    description: development sandbox
+security:
+  - OAuth2: [admin]
+
+paths:
+  /vendors/{vendorId}/orders/:
+    post:
+      $ref: '../src/endpoints/order/OrderCreate.yaml'
+    get:
+      $ref: '../src/endpoints/order/OrderList.yaml'
+
+  /vendors/{vendorId}/orders/{order_id}:
+    get:
+      $ref: '../src/endpoints/order/OrderRead.yaml'
+
+components:
+  securitySchemes:
+    OAuth2:
+      $ref: '../src/security/Oauth2SecuritySchema.yaml'
