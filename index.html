@@ -3,8 +3,33 @@
   <title>bookingkit widget test</title>
 </head>
 <body>
-  <div id="bookingKitContainer" data-e="ff6e6a5674925492529b0daa66b49ba9" data-cw="4e731bf660a440245ef05a3979797040"></div>
-<script src="https://7d0197afa444611665ff96c35777dbab.widget.bookingkit.net/bkscript/4e731bf660a440245ef05a3979797040/?e=ff6e6a5674925492529b0daa66b49ba9" async></script>
+  <div id="bookingKitContainer" data-lang="de" data-e="ff6e6a5674925492529b0daa66b49ba9" data-cw="4e731bf660a440245ef05a3979797040"></div>
+<script>
+    const observer = new MutationObserver(() => {
+        if (BookingKitApp.customWidget != ''){
+            customWidgetParam = "&cw=" + BookingKitApp.customWidget;
+        }
+        offerId = '4f43373deef639d56f5b2ccd8b1bec7d'
+        url = BookingKitApp.OfferUrl + "&o=" + offerId + customWidgetParam ;
+        BookingKitApp.loadBkPageFallback(url, 'bookingKitContainer', 'initExtWidgets');
+        observer.disconnect();
+    });
+
+    observer.observe(document.querySelector("#bookingKitContainer"), {
+        subtree: true,
+        childList: true,
+    });
+</script>
+<script src="https://7d0197afa444611665ff96c35777dbab.widget.bookingkit.net/bkscript/4e731bf660a440245ef05a3979797040/?lang=de&e=ff6e6a5674925492529b0daa66b49ba9" async></script>
+<style>
+    #bookingKitContainer .bk-detail-content .bk-offer-detail-description {
+        display: none;
+    }
+    #bookingKitContainer div.bk-detail-right-column .bk-detail-info-item:nth-last-child(2) {
+        display:none;
+    }
+</style>
+
 </body>
 </html>
 
