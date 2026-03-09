@@ -3,34 +3,6 @@
   <title>bookingkit test</title>
 </head>
 <body>
-
-<div id="bookingKitContainer" data-lang=en" data-e="095b95f236b182dd6bcdd7299b2b0f07" data-cw="20264da5cfe724e032945a68be758334"></div>
-<script>
-    const observer = new MutationObserver(() => {
-        if (BookingKitApp.customWidget != ''){
-            customWidgetParam = "&cw=" + BookingKitApp.customWidget;
-        }
-        offerId = 'aa8bc0f68babd9dcf7540e353b4fe992'
-        url = BookingKitApp.OfferUrl + "&o=" + offerId + customWidgetParam ;
-        BookingKitApp.loadBkPageFallback(url, 'bookingKitContainer', 'initExtWidgets');
-        observer.disconnect();
-    });
-
-    observer.observe(document.querySelector("#bookingKitContainer"), {
-        subtree: true,
-        childList: true,
-    });
-</script>
-<script src="https://51de9cb4079f5ed03811f4bda9b32671.widget.bookingkit.net/bkscript/20264da5cfe724e032945a68be758334/?lang=en&e=095b95f236b182dd6bcdd7299b2b0f07" async></script>
-<style>
-    #bookingKitContainer .bk-detail-content .bk-offer-detail-description {
-        display: none;
-    }
-    #bookingKitContainer div.bk-detail-right-column .bk-detail-info-item:nth-last-child(2) {
-        display:none;
-    }
-</style>
-
 </body>
 </html>
 
